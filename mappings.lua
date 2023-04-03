@@ -1,25 +1,54 @@
--- Mapping data with "desc" stored directly by vim.keymap.set().
---
--- Please use this mappings table to set keyboard mapping since this is the
--- lower level configuration and more robust one. (which-key will
--- automatically pick-up stored data by this setting.)
+local web_devicons_ok, web_devicons = pcall(require, "nvim-web-devicons")
+if not web_devicons_ok then
+  return
+end
+
+local material_icon_ok, material_icon = pcall(require, "nvim-material-icon")
+if not material_icon_ok then
+  return
+end
+
+web_devicons.setup({
+  override = material_icon.get_icons(),
+})
+
+local mark = require("harpoon.mark")
+local ui = require("harpoon.ui")
+
 return {
   -- first key is the mode
   n = {
-    -- second key is the lefthand side of the map
-    -- mappings seen under group name "Buffer"
     ["<leader>bn"] = { "<cmd>tabnew<cr>", desc = "New tab" },
     ["<leader>bD"] = {
       function()
-        require("astronvim.utils.status").heirline.buffer_picker(function(bufnr) require("astronvim.utils.buffer").close(bufnr) end)
+        require("astronvim.utils.status").heirline.buffer_picker(function(bufnr)
+          require("astronvim.utils.buffer").close(
+            bufnr)
+        end)
       end,
       desc = "Pick to close",
     },
-    -- tables with the `name` key will be registered with which-key if it's installed
-    -- this is useful for naming menus
     ["<leader>b"] = { name = "Buffers" },
-    -- quick save
-    -- ["<C-s>"] = { ":w!<cr>", desc = "Save File" },  -- change description but the same command
+    ["<S-l>"] = { ":bnext<CR>" },
+    ["<S-h>"] = { ":bprevious<CR>" },
+    ["Y"] = { "yy" },
+    ["<leader>x"] = { ":bp<bar>sp<bar>bn<bar>bd<CR>" },
+    ["<leader>aa"] = mark.add_file,
+    ["<leader>am"] = ui.toggle_quick_menu,
+    ["<leader>1"] = function() ui.nav_file(1) end,
+    ["<leader>2"] = function() ui.nav_file(2) end,
+    ["<leader>3"] = function() ui.nav_file(3) end,
+    ["<leader>4"] = function() ui.nav_file(4) end,
+    ["K"] = "<cmd>Lspsaga hover_doc<CR>",
+    ["gd"] = "<cmd>Lspsaga goto_definition<CR>",
+    ["gD"] = "<cmd>Lspsaga peek_definition<CR>",
+    ["gi"] = "<cmd>Lspsaga lsp_finder<CR>",
+    ["<leader>r"] = "<cmd>Lspsaga rename<CR>",
+    ["<leader>gn"] = "<cmd>Lspsaga diagnostic_jump_next<CR>",
+  },
+  v = {
+    ["J"] = { ":m '>+1<CR>gv=gv" },
+    ["K"] = { ":m '<-2<CR>gv=gv" }
   },
   t = {
     -- setting a mapping to false will disable it
