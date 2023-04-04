@@ -6,8 +6,11 @@ return {
 
   { import = "astrocommunity.colorscheme.catppuccin" },
   { import = "astrocommunity.colorscheme.tokyonight" },
+  { import = "astrocommunity.colorscheme.nightfox" },
   { import = "astrocommunity.pack.tailwindcss" },
   { import = "astrocommunity.pack.typescript" },
   { import = "astrocommunity.utility.neodim" },
+  { import = "astrocommunity.motion.vim-matchup" },
+  { import = "astrocommunity.diagnostics.trouble-nvim" },
   { import = "astrocommunity.completion.copilot-lua-cmp" },
 }
