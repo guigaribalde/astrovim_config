@@ -15,22 +15,6 @@ web_devicons.setup({
 local mark = require("harpoon.mark")
 local ui = require("harpoon.ui")
 
--- vim.opt.termguicolors = true
--- vim.cmd [[highlight IndentBlanklineIndent1 guifg=#44475a gui=nocombine]]
-
--- vim.opt.list = true
--- vim.opt.listchars:append "space:⋅"
--- vim.opt.listchars:append "eol:↴"
-
--- require("indent_blankline").setup {
---   space_char_blankline = " ",
---   show_current_context = true,
---   show_current_context_start = true,
---   char_highlight_list = {
---     "IndentBlanklineIndent1",
---   },
--- }
-
 return {
   -- first key is the mode
   n = {
@@ -60,7 +44,9 @@ return {
     ["gD"] = "<cmd>Lspsaga peek_definition<CR>",
     ["gi"] = "<cmd>Lspsaga lsp_finder<CR>",
     ["<leader>r"] = "<cmd>Lspsaga rename<CR>",
+    ["<leader>gp"] = "<cmd>Lspsaga diagnostic_jump_prev<CR>",
     ["<leader>gn"] = "<cmd>Lspsaga diagnostic_jump_next<CR>",
+    ["<leader><S-k>"] = "<cmd>Lspsaga show_cursor_diagnostics<CR>",
   },
   v = {
     ["J"] = { ":m '>+1<CR>gv=gv" },

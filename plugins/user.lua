@@ -36,6 +36,11 @@ return {
     event = "VeryLazy"
   },
   {
+    'mg979/vim-visual-multi',
+    branch = 'master',
+    event = "VeryLazy"
+  },
+  {
     "windwp/nvim-ts-autotag",
     opts = {},
     event = "User AstroFile"

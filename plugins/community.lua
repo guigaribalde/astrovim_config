@@ -11,7 +11,6 @@ return {
   { import = "astrocommunity.pack.typescript" },
   { import = "astrocommunity.utility.neodim" },
   { import = "astrocommunity.motion.vim-matchup" },
-  { import = "astrocommunity.diagnostics.trouble-nvim" },
-  { import = "astrocommunity.project.nvim-spectre" },
+  -- { import = "astrocommunity.diagnostics.trouble-nvim" },
   { import = "astrocommunity.completion.copilot-lua-cmp" },
 }
