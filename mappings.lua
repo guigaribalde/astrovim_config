@@ -50,7 +50,8 @@ return {
   },
   v = {
     ["J"] = { ":m '>+1<CR>gv=gv" },
-    ["K"] = { ":m '<-2<CR>gv=gv" }
+    ["K"] = { ":m '<-2<CR>gv=gv" },
+    ["D"] = { "_D" },
   },
   t = {
     -- setting a mapping to false will disable it

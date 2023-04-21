@@ -17,8 +17,12 @@ return {
     end,
     event = "User AstroFile"
   },
+  -- {
+  --   "dracula/vim",
+  --   event = "VeryLazy"
+  -- },
   {
-    "dracula/vim",
+    "Mofiqul/dracula.nvim",
     event = "VeryLazy"
   },
   {
