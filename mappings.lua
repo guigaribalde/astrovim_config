@@ -47,6 +47,10 @@ return {
     ["<leader>gp"] = "<cmd>Lspsaga diagnostic_jump_prev<CR>",
     ["<leader>gn"] = "<cmd>Lspsaga diagnostic_jump_next<CR>",
     ["<leader><S-k>"] = "<cmd>Lspsaga show_cursor_diagnostics<CR>",
+    ["<C-H>"] = "<cmd>TmuxNavigateLeft<CR>",
+    ["<C-L>"] = "<cmd>TmuxNavigateRight<CR>",
+    ["<C-J>"] = "<cmd>TmuxNavigateDown<CR>",
+    ["<C-K>"] = "<cmd>TmuxNavigateUp<CR>",
   },
   v = {
     ["J"] = { ":m '>+1<CR>gv=gv" },
